@@ -1,3 +1,5 @@
+# You can reach to the csv files in README
+
 hospital_data<-read.csv("C:\\Users\\XXX\\Downloads\\rprog_data_ProgAssignment3-data\\hospital-data.csv")
 outcomes <- read.csv("H:\\Users\\XXX\\Downloads\\rprog_data_ProgAssignment3-data\\outcome-of-care-measures.csv")
 
