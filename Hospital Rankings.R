@@ -1,12 +1,12 @@
-hospital_data<-read.csv("H:\\Users\\batuk\\Downloads\\rprog_data_ProgAssignment3-data\\hospital-data.csv")
-outcomes <- read.csv("H:\\Users\\batuk\\Downloads\\rprog_data_ProgAssignment3-data\\outcome-of-care-measures.csv")
+hospital_data<-read.csv("C:\\Users\\XXX\\Downloads\\rprog_data_ProgAssignment3-data\\hospital-data.csv")
+outcomes <- read.csv("H:\\Users\\XXX\\Downloads\\rprog_data_ProgAssignment3-data\\outcome-of-care-measures.csv")
 
 outcomes[,11]<-as.numeric(outcomes[,11])
 hist(outcomes[,11])
 colnames(outcomes)[17]="heart failure"
 colnames(outcomes)[11]="heart attack"
 colnames(outcomes)[23]="pneumonia"
-################ Returns best hospital in a given state for given outcome ###############
+#Returns best hospital in a given state for given outcome 
 best <- function(state_name, outcome_name){
   if(all("heart failure" != outcome_name) && all("heart attack" != outcome_name) && all("pneumonia" != outcome_name)){
        error <- "invalid outcome"
@@ -37,9 +37,9 @@ best <- function(state_name, outcome_name){
    
  
 }
-####################################################################################
 
-##### Ranks hospitals by outcome in a given state and returns the ith hospital#######
+
+# Ranks hospitals by outcome in a given state and returns the ith hospital
 rankhospital <- function(state_name,outcome_name,num){
   if(all("heart failure" != outcome_name) && all("heart attack" != outcome_name) && all("pneumonia" != outcome_name)){
     error <- "invalid outcome"
@@ -71,9 +71,9 @@ rankhospital <- function(state_name,outcome_name,num){
     }
   }
 }
-####################################################################################
 
-######### Ranks hospitals by outcome in all states and returns the ith hospitals of their states respectively ############
+
+# Ranks hospitals by outcome in all states and returns the ith hospitals of their states respectively
 sortsplit <- function(x){
   return (x[order(x[,1],x["Hospital.Name"]),])
 }
